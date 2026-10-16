@@ -1,3 +1,5 @@
+import avatar from '../assets/avatar.jpeg';
+
 const instructors = [
   {
     name: 'Ing. Sofía Ramos',
@@ -9,7 +11,7 @@ const instructors = [
     name: 'Msc. Carlos Mendoza',
     role: 'Consultor SEO Técnico',
     bio: 'Más de 10 años optimizando el rendimiento de plataformas de alto tráfico y arquitecturas Web.',
-    img: '/src/assets/avatar.jpeg',
+    img: avatar,
   },
 ];
 

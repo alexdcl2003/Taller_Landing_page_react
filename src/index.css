@@ -105,17 +105,9 @@ main {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
   align-items: start;
-}
-
-@media (min-width: 850px) {
-  .hero {
-    grid-template-columns: 1.2fr 1fr;
-    gap: 2.5rem;
-  }
 }
 
 .badge {

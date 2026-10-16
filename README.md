@@ -1,16 +1,53 @@
-# React + Vite
+# Tech Academy - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page para promocionar el programa de Arquitectura Web Avanzada. Proyecto académico de la práctica de Desarrollo Web, construido con React y Bootstrap.
 
-Currently, two official plugins are available:
+## Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 y JSX
+- Bootstrap 5.3
+- Vite
+- CSS propio para complementar el diseño
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Interfaz organizada en componentes para navegación, presentación, estadísticas, programa, instructores, preguntas frecuentes y pie de página.
+- Diseño adaptable a pantallas móviles y de escritorio, con grillas y utilidades de Bootstrap.
+- Formulario controlado con `useState`, eventos de cambio y envío, y validación de nombre, correo, teléfono, nivel de experiencia y aceptación de términos.
+- Mensajes accesibles de error y confirmación dentro del formulario.
+- El formulario es demostrativo: valida los datos en el navegador, pero no los envía ni los almacena en un servidor.
 
-## Expanding the ESLint configuration
+## Ejecución local
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Requiere Node.js y npm.
+
+```bash
+npm ci
+npm run dev
+```
+
+Para generar y revisar la versión de producción:
+
+```bash
+npm run build
+npm run preview
+```
+
+Verificaciones de calidad:
+
+```bash
+npm run lint
+```
+
+## Estructura
+
+- `src/App.jsx`: composición de las secciones de la landing page.
+- `src/components/`: componentes funcionales de la interfaz.
+- `src/index.css` y `src/root.css`: estilos responsivos y variables visuales.
+- `public/`: recursos públicos.
+
+## Repositorio
+
+[GitHub: Taller_Landing_page_react](https://github.com/alexdcl2003/Taller_Landing_page_react)
+
+El enlace al video demostrativo de Google Drive debe incluirse en el PDF de entrega una vez que el video esté publicado y tenga permisos de visualización.

@@ -8,6 +8,7 @@ export default function Hero() {
     role: '',
     terms: false,
   });
+  const [feedback, setFeedback] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -15,17 +16,30 @@ export default function Hero() {
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
+    setFeedback(null);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Inscripción recibida para ${formData.name}`);
-    console.log('Datos enviados:', formData);
+
+    if (!e.currentTarget.checkValidity()) {
+      e.currentTarget.reportValidity();
+      setFeedback({
+        type: 'error',
+        message: 'Revisa los campos marcados: hay información incompleta o inválida.',
+      });
+      return;
+    }
+
+    setFeedback({
+      type: 'success',
+      message: `¡Gracias, ${formData.name}! El formulario es válido. Esta demostración no envía ni almacena tus datos.`,
+    });
   };
 
   return (
-    <section id="registro" aria-labelledby="hero-title" className="hero">
-      <div className="hero-content">
+    <section id="registro" aria-labelledby="hero-title" className="hero row g-4">
+      <div className="hero-content col-12 col-lg-7">
         <span className="badge">Octavo Semestre | Ingeniería de Software</span>
         <h1 id="hero-title">Acelera tu Carrera con Arquitectura Web Avanzada</h1>
         <p>
@@ -44,13 +58,14 @@ export default function Hero() {
         </figure>
       </div>
 
-      <form onSubmit={handleSubmit} className="form-card">
+      <form onSubmit={handleSubmit} className="form-card col-12 col-lg-5" noValidate>
         <h2>Reserva tu cupo gratuito</h2>
         <p className="form-subtext">Únete a la siguiente cohorte de especialización web.</p>
 
         <div>
           <label htmlFor="user-name">Nombre completo *</label>
           <input
+            className="form-control"
             type="text"
             id="user-name"
             name="name"
@@ -69,6 +84,7 @@ export default function Hero() {
         <div>
           <label htmlFor="user-email">Correo profesional o académico *</label>
           <input
+            className="form-control"
             type="email"
             id="user-email"
             name="email"
@@ -83,6 +99,7 @@ export default function Hero() {
         <div>
           <label htmlFor="user-phone">Teléfono celular (10 dígitos) *</label>
           <input
+            className="form-control"
             type="tel"
             id="user-phone"
             name="phone"
@@ -99,6 +116,7 @@ export default function Hero() {
         <div>
           <label htmlFor="user-role">Nivel de experiencia actual *</label>
           <select
+            className="form-select"
             id="user-role"
             name="role"
             value={formData.role}
@@ -114,8 +132,9 @@ export default function Hero() {
 
         <fieldset>
           <legend>Términos y condiciones *</legend>
-          <p className="checkbox-group">
+          <p className="checkbox-group form-check">
             <input
+              className="form-check-input"
               type="checkbox"
               id="terms-accept"
               name="terms"
@@ -123,13 +142,23 @@ export default function Hero() {
               onChange={handleChange}
               required
             />
-            <label htmlFor="terms-accept">
+            <label htmlFor="terms-accept" className="form-check-label">
               Acepto las <a href="/politicas" target="_blank" rel="noopener">políticas de privacidad</a> y el tratamiento de mis datos personales.
             </label>
           </p>
         </fieldset>
 
-        <button type="submit">Iniciar Inscripción Directa</button>
+        {feedback && (
+          <p
+            className={`alert ${feedback.type === 'success' ? 'alert-success' : 'alert-danger'} mb-0`}
+            role={feedback.type === 'error' ? 'alert' : 'status'}
+            aria-live="polite"
+          >
+            {feedback.message}
+          </p>
+        )}
+
+        <button type="submit" className="btn btn-primary">Iniciar Inscripción Directa</button>
         <small>Garantía de privacidad. Sin cargos ocultos.</small>
       </form>
     </section>
