@@ -4,7 +4,7 @@ export default function Footer() {
       <aside aria-label="Información complementaria" className="newsletter-aside">
         <h2>¿Quieres recibir guías de estudio gratuitas?</h2>
         <p>Suscríbete a nuestro boletín semanal de desarrollo web y estándares del W3C.</p>
-        <a href="#registro" className="cta-button-alt">Ir al Formulario</a>
+        <a href="./registro.html" className="cta-button-alt">Ir al Formulario</a>
       </aside>
 
       <footer>

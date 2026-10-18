@@ -13,7 +13,8 @@ Landing page para promocionar el programa de Arquitectura Web Avanzada. Proyecto
 
 - Interfaz organizada en componentes para navegación, presentación, estadísticas, programa, instructores, preguntas frecuentes y pie de página.
 - Diseño adaptable a pantallas móviles y de escritorio, con grillas y utilidades de Bootstrap.
-- Formulario controlado con `useState`, eventos de cambio y envío, y validación de nombre, correo, teléfono, nivel de experiencia y aceptación de términos.
+- Página de inscripción independiente en `registro.html`, enlazada desde los botones de inscripción de la landing page.
+- Formulario controlado con `useState`, eventos de cambio y envío, y validación de nombre, correo, edad, teléfono, país, contraseña, nivel de experiencia y aceptación de términos.
 - Mensajes accesibles de error y confirmación dentro del formulario.
 - El formulario es demostrativo: valida los datos en el navegador, pero no los envía ni los almacena en un servidor.
 
@@ -42,8 +43,10 @@ npm run lint
 ## Estructura
 
 - `src/App.jsx`: composición de las secciones de la landing page.
+- `src/RegistrationPage.jsx`: página independiente de inscripción.
 - `src/components/`: componentes funcionales de la interfaz.
 - `src/index.css` y `src/root.css`: estilos responsivos y variables visuales.
+- `registro.html`: punto de entrada de la página de inscripción.
 - `public/`: recursos públicos.
 
 ## Repositorio

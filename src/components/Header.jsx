@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header>
-      <a href="/" aria-label="Inicio de Tech Academy">
+      <a href="./index.html" aria-label="Inicio de Tech Academy">
         <svg width="180" height="40" viewBox="0 0 180 40" aria-hidden="true">
           <rect x="0" y="4" width="32" height="32" rx="8" fill="#0284c7" />
           <path
@@ -21,10 +21,10 @@ export default function Header() {
       </a>
       <nav aria-label="Navegación principal">
         <ul>
-          <li><a href="#programa">Programa</a></li>
-          <li><a href="#instructores">Instructores</a></li>
-          <li><a href="#faq">Preguntas</a></li>
-          <li><a href="#registro" className="nav-cta">Inscribirse</a></li>
+          <li><a href="./index.html#programa">Programa</a></li>
+          <li><a href="./index.html#instructores">Instructores</a></li>
+          <li><a href="./index.html#faq">Preguntas</a></li>
+          <li><a href="./registro.html" className="nav-cta">Inscribirse</a></li>
         </ul>
       </nav>
     </header>
