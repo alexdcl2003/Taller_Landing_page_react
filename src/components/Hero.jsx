@@ -91,8 +91,8 @@ export default function Hero() {
   };
 
   return (
-    <section id="registro" aria-labelledby="hero-title" className="hero row g-4">
-      <div className="hero-content col-12 col-lg-7">
+    <section id="registro" aria-labelledby="hero-title" className="hero">
+      <div className="hero-content">
         <span className="badge">Octavo Semestre | Ingeniería de Software</span>
         <h1 id="hero-title">Acelera tu Carrera con Arquitectura Web Avanzada</h1>
         <p>
@@ -111,7 +111,7 @@ export default function Hero() {
         </figure>
       </div>
 
-      <form onSubmit={handleSubmit} className="form-card col-12 col-lg-5" noValidate>
+      <form onSubmit={handleSubmit} className="form-card" noValidate>
         <h2>Reserva tu cupo gratuito</h2>
         <p className="form-subtext">Únete a la siguiente cohorte de especialización web.</p>
 
